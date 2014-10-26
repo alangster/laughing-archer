@@ -1,0 +1,11 @@
+<div>
+	<%= link_to("ALL BLOGS", :root) %>
+	<% if !current_user %>
+	<%= link_to("SIGN UP", :new_user) %>
+	<%= link_to("SIGN IN", :new_session) %>
+	<% else %>
+	<%= link_to("PROFILE", current_user) %>
+	<%= link_to("WRITE A NEW POST", :new_post) %>
+	<%= link_to("SIGN OUT", :signout) %>
+	<% end %>
+</div>
