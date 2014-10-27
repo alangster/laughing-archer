@@ -4,7 +4,7 @@
 	<tr>
 		<td><%= link_to("#{post.title}", post) %></td>
 		<% if @user == current_user %>
-			<td><%= link_to("Edit", "/posts/#{post.id}/edit") %></td>
+			<td><%= link_to("Edit", edit_post_path(post)) %></td>
 			<td><%= link_to("Delete", post, method: :delete) %></td>
 		<% end %>
 	</tr>
@@ -13,6 +13,6 @@
 <h3>Posts on which <%= @user.name %> has commented:</h3>
 <ul>
 	<% @user.commented_posts.each do |post| %>
-	<li><%= link_to("#{post.title}", post) %></li>
+	<li><%= link_to("#{post.title}", post_path) %></li>
 	<% end %>
 </ul>
